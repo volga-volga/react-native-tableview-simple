@@ -156,9 +156,11 @@ class Section extends Component {
     return (
       <View style={_styles.section}>
         {headerComponent || renderHeader()}
-        <Separator insetLeft={0} tintColor={separatorTintColor} />
+        <Separator insetLeft={0} tintColor={separatorTintColor}
+          isHidden={this.props.hideTopSeparator || this.props.hideOuterSeparators}/>
         {React.Children.map(children, renderChild)}
-        <Separator insetLeft={0} tintColor={separatorTintColor} />
+        <Separator insetLeft={0} tintColor={separatorTintColor} 
+          isHidden={this.props.hideBottomSeparator || this.props.hideOuterSeparators}/>
         {footerComponent || renderFooter()}
       </View>
     );
