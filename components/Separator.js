@@ -6,6 +6,9 @@ import PropTypes from 'prop-types';
 import { StyleSheet, View } from 'react-native';
 
 const Separator = props => {
+  if (props.isHidden) {
+    return null;
+  }
   const localStyles = {
     separator: [styles.separator, { backgroundColor: props.backgroundColor }],
     separator_inner: [
