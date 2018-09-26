@@ -23,7 +23,7 @@ const Separator = props => {
 
   return (
     <View style={localStyles.separator}>
-      <View style={localStyles.separator_inner} />
+      {!props.isHidden && <View style={localStyles.separator_inner} />}
     </View>
   );
 };
@@ -47,7 +47,7 @@ Separator.defaultProps = {
 const styles = StyleSheet.create({
   separator: {},
   separator_inner: {
-    height: StyleSheet.hairlineWidth,
+    height: 1, // StyleSheet.hairlineWidth,
   },
 });
 
